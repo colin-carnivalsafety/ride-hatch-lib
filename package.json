@@ -1,15 +1,9 @@
 {
   "name": "ride-hatch-lib",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/cjs/index.js",
-      "import": "./dist/esm/index.js"
-    }
-  },
   "scripts": {
     "build:cjs": "tsc --declaration --module CommonJS --outDir dist",
     "build:esm": "tsc --declaration --module ESNext --outDir dist",
