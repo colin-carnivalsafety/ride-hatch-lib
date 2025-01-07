@@ -1,0 +1,13 @@
+{
+  "name": "ride-hatch-lib",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --declaration --emitDeclarationOnly",
+    "buildAndCopy": "tsc --declaration --emitDeclarationOnly && cp -r ./types ../functions/shared"
+  },
+  "dependencies": {
+    "typescript": "^5.7.2"
+  }
+}
