@@ -214,5 +214,6 @@ export type EventRegistrationDocument = {
   updated_by_uid: string
   updated_at_ms: number
   owner_uid: string
+  file_gs_url: string;
   _additional_comments: string
 }
