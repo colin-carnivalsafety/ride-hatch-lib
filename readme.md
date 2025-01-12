@@ -6,4 +6,7 @@
 
 # Push new version
 
-``
+```sh
+yarn version --patch
+git push --follow-tags
+```
