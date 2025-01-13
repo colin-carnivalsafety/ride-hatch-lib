@@ -131,6 +131,14 @@ export type RideCommon = {
     _products_range: string;
     _total_site_dimensions: string;
     _device_dimensions: string;
+    _plant_rego_state_issued: string;
+    _plant_rego_number: string;
+    _plant_rego_expiry_date: string;
+    _engineering_cert_inspected_date: string;
+    _engineering_cert_engineer_name: string;
+    _public_liability_policy_number: string;
+    _public_liability_expiry_date: string;
+    _public_liability_coverage_amount: string;
 };
 export interface RideDocument extends RideCommon {
     uid: string;
