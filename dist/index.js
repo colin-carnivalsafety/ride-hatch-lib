@@ -4,6 +4,11 @@ export var BusinessRole;
     BusinessRole["EventHost"] = "event-host";
     BusinessRole["InternalSupport"] = "internal-support";
 })(BusinessRole || (BusinessRole = {}));
+export var BusinessSubscription;
+(function (BusinessSubscription) {
+    BusinessSubscription["SubscriptionRideOperatorRahs"] = "subscription-ro-rahs";
+    BusinessSubscription["SubscriptionRideOperatorIntroductory"] = "subscription-ro-introductory";
+})(BusinessSubscription || (BusinessSubscription = {}));
 export var RegistrationStatus;
 (function (RegistrationStatus) {
     RegistrationStatus["idle"] = "idle";

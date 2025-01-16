@@ -4,6 +4,11 @@ export enum BusinessRole {
   InternalSupport = 'internal-support'
 }
 
+export enum BusinessSubscription {
+  SubscriptionRideOperatorRahs = "subscription-ro-rahs",
+  SubscriptionRideOperatorIntroductory = "subscription-ro-introductory",
+}
+
 export type BusinessCommon = {
   business_name: string;
   abn: string;
@@ -11,6 +16,7 @@ export type BusinessCommon = {
   contact_number: string;
   contact_email: string;
   business_role: BusinessRole
+  subscription: BusinessSubscription
 };
 
 export interface BusinessDocument extends BusinessCommon {
