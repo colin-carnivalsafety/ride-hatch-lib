@@ -5,9 +5,9 @@
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build:cjs": "tsc --declaration --module CommonJS --outDir dist",
-    "build:esm": "tsc --declaration --module ESNext --outDir dist",
-    "build": "yarn build:cjs && yarn build:esm"
+    "build:cjs": "tsc --declaration --module CommonJS --outDir dist/cjs",
+    "build:esm": "tsc --declaration --module ESNext --outDir dist/esm",
+    "build": "tsc && yarn build:cjs && yarn build:esm"
   },
   "devDependencies": {
     "typescript": "^5.7.2"
