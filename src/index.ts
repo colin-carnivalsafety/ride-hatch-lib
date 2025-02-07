@@ -9,6 +9,22 @@ export enum BusinessSubscription {
   SubscriptionRideOperatorIntroductory = "subscription-ro-introductory",
 }
 
+export interface AbnLookupResponse {
+  Abn: string;
+  AbnStatus: string;
+  AbnStatusEffectiveFrom: string;
+  Acn?: string;
+  AddressDate?: string | null;
+  AddressPostcode?: string;
+  AddressState?: string;
+  BusinessName?: string[];
+  EntityName: string;
+  EntityTypeCode: string;
+  EntityTypeName: string;
+  Gst?: string | null;
+  Message?: string;
+}
+
 export type BusinessCommon = {
   business_name: string;
   abn: string;
@@ -17,6 +33,7 @@ export type BusinessCommon = {
   contact_email: string;
   business_role: BusinessRole
   subscription: BusinessSubscription
+  abn_lookup?: AbnLookupResponse | null
 };
 
 export interface BusinessDocument extends BusinessCommon {
