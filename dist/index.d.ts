@@ -51,6 +51,7 @@ export type RequiredDocuments = {
     file_promotional_materials: DocumentRequirementLevel;
     file_site_layout_plan: DocumentRequirementLevel;
     file_device_plan: DocumentRequirementLevel;
+    file_workers_compensation: DocumentRequirementLevel;
 };
 export type EventCommon = {
     name: string;
