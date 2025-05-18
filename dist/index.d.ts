@@ -5,6 +5,7 @@ export declare enum BusinessRole {
 }
 export declare enum BusinessSubscription {
     SubscriptionRideOperatorRahs = "subscription-ro-rahs",
+    SubscriptionRideOperatorRaswa = "subscription-ro-raswa",
     SubscriptionRideOperatorIntroductory = "subscription-ro-introductory"
 }
 export interface AbnLookupResponse {

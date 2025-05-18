@@ -7,6 +7,7 @@ export var BusinessRole;
 export var BusinessSubscription;
 (function (BusinessSubscription) {
     BusinessSubscription["SubscriptionRideOperatorRahs"] = "subscription-ro-rahs";
+    BusinessSubscription["SubscriptionRideOperatorRaswa"] = "subscription-ro-raswa";
     BusinessSubscription["SubscriptionRideOperatorIntroductory"] = "subscription-ro-introductory";
 })(BusinessSubscription || (BusinessSubscription = {}));
 export var RegistrationStatus;
