@@ -6,6 +6,7 @@ export enum BusinessRole {
 
 export enum BusinessSubscription {
   SubscriptionRideOperatorRahs = "subscription-ro-rahs",
+  SubscriptionRideOperatorRaswa = "subscription-ro-raswa",
   SubscriptionRideOperatorIntroductory = "subscription-ro-introductory",
 }
 
