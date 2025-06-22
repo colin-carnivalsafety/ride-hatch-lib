@@ -92,7 +92,7 @@ export interface EventWithRegistrationStatus extends EventDocument {
         standby: number;
     };
 }
-export type RideRegistrationDocument = {
+export type DeviceRegistrationDocument = {
     uid: string;
     event_uid: string;
     event: EventDocument;
@@ -108,7 +108,7 @@ export type RideRegistrationDocument = {
     registration_status: RegistrationStatus;
     deleted_at_ms: number | null;
 };
-export type RideRegistrationDocumentUpdate = {
+export type DeviceRegistrationDocumentUpdate = {
     event_uid: string;
     ride_uid: string;
     owner_uid: string;
@@ -120,7 +120,7 @@ export type RideRegistrationDocumentUpdate = {
     deleted_at_ms: number | null;
     ride: Partial<RideDocument>;
 };
-export type RideRegistrationDocumentStatusUpdate = {
+export type DeviceRegistrationDocumentStatusUpdate = {
     uid: string;
     registration_status: RegistrationStatus;
 };
