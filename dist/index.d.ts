@@ -108,21 +108,18 @@ export type DeviceRegistrationDocument = {
     registration_status: RegistrationStatus;
     deleted_at_ms: number | null;
 };
-export type DeviceRegistrationDocumentUpdate = {
+export type CreateDeviceRegistrationDto = {
     event_uid: string;
-    ride_uid: string;
-    owner_uid: string;
     ride_operator_business_uid: string;
+    ride_uid: string;
+    _additional_comments: string;
+    file_gs_url: string;
     registration_status: RegistrationStatus;
-    _additional_comments: string | undefined;
-    file_gs_url: string | undefined;
-    updated_by_uid: string;
-    deleted_at_ms: number | null;
-    ride: Partial<RideDocument>;
 };
-export type DeviceRegistrationDocumentStatusUpdate = {
-    uid: string;
-    registration_status: RegistrationStatus;
+export type UpdateDeviceRegistrationDto = {
+    _additional_comments?: string;
+    file_gs_url?: string;
+    registration_status?: RegistrationStatus;
 };
 export type RideCommon = {
     uid: string;
