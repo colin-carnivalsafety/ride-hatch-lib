@@ -115,6 +115,7 @@ export type UpdateEventDto = {
   bump_out_at?: string;
   images?: string[];
   required_documents?: RequiredDocuments;
+  visibility?: 'draft' | 'private' | 'public';
 }
 
 export enum RegistrationStatus {
