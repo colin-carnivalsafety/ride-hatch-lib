@@ -61,30 +61,59 @@ export type RequiredDocuments = {
   file_workers_compensation: DocumentRequirementLevel
 }
 
-export type EventCommon = {
-  name: string
-  description: string
-  location: string
-  timezone: string
-  start_at: string
-  end_at: string
-  eoi_open_at: string
-  eoi_close_at: string
-  bump_in_at: string
-  bump_out_at: string
-  images: string[]
-  required_documents: RequiredDocuments
+export type EventDocument = {
+  uid: string;
+  name: string;
+  description: string;
+  location: string;
+  timezone: string;
+  start_at: string;
+  end_at: string;
+  eoi_open_at: string;
+  eoi_close_at: string;
+  bump_in_at: string;
+  bump_out_at: string;
+  images: string[];
+  required_documents: RequiredDocuments;
+  owner_business_name: string;
+  owner_business_uid: string;
+  owner_uid: string;
+  updated_by_uid: string;
+  updated_at_ms: number;
+  deleted_at_ms: number | null;
+  published_at_ms: number;
+  visibility: 'draft' | 'private' | 'public';
 }
 
-export interface EventDocument extends EventCommon {
-  uid: string
-  owner_business_name: string
-  owner_business_uid: string
-  owner_uid: string
-  updated_by_uid: string
-  updated_at_ms: number
-  deleted_at_ms: number | null
-  published_at_ms: number
+export interface CreateEventDto {
+  uid: string;
+  name: string;
+  description: string;
+  location: string;
+  timezone: string;
+  start_at: string;
+  end_at: string;
+  eoi_open_at: string;
+  eoi_close_at: string;
+  bump_in_at: string;
+  bump_out_at: string;
+  images: string[];
+  required_documents: RequiredDocuments;
+}
+
+export type UpdateEventDto = {
+  name?: string;
+  description?: string;
+  location?: string;
+  timezone?: string;
+  start_at?: string;
+  end_at?: string;
+  eoi_open_at?: string;
+  eoi_close_at?: string;
+  bump_in_at?: string;
+  bump_out_at?: string;
+  images?: string[];
+  required_documents?: RequiredDocuments;
 }
 
 export enum RegistrationStatus {

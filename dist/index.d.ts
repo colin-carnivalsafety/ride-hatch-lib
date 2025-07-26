@@ -54,7 +54,8 @@ export type RequiredDocuments = {
     file_device_plan: DocumentRequirementLevel;
     file_workers_compensation: DocumentRequirementLevel;
 };
-export type EventCommon = {
+export type EventDocument = {
+    uid: string;
     name: string;
     description: string;
     location: string;
@@ -67,9 +68,6 @@ export type EventCommon = {
     bump_out_at: string;
     images: string[];
     required_documents: RequiredDocuments;
-};
-export interface EventDocument extends EventCommon {
-    uid: string;
     owner_business_name: string;
     owner_business_uid: string;
     owner_uid: string;
@@ -77,7 +75,37 @@ export interface EventDocument extends EventCommon {
     updated_at_ms: number;
     deleted_at_ms: number | null;
     published_at_ms: number;
+    visibility: 'draft' | 'private' | 'public';
+};
+export interface CreateEventDto {
+    uid: string;
+    name: string;
+    description: string;
+    location: string;
+    timezone: string;
+    start_at: string;
+    end_at: string;
+    eoi_open_at: string;
+    eoi_close_at: string;
+    bump_in_at: string;
+    bump_out_at: string;
+    images: string[];
+    required_documents: RequiredDocuments;
 }
+export type UpdateEventDto = {
+    name?: string;
+    description?: string;
+    location?: string;
+    timezone?: string;
+    start_at?: string;
+    end_at?: string;
+    eoi_open_at?: string;
+    eoi_close_at?: string;
+    bump_in_at?: string;
+    bump_out_at?: string;
+    images?: string[];
+    required_documents?: RequiredDocuments;
+};
 export declare enum RegistrationStatus {
     idle = "idle",
     accepted = "accepted",
