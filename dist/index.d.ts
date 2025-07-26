@@ -54,7 +54,7 @@ export type RequiredDocuments = {
     file_device_plan: DocumentRequirementLevel;
     file_workers_compensation: DocumentRequirementLevel;
 };
-export type EventDocument = {
+export interface EventDocument {
     uid: string;
     name: string;
     description: string;
@@ -76,7 +76,7 @@ export type EventDocument = {
     deleted_at_ms: number | null;
     published_at_ms: number;
     visibility: 'draft' | 'private' | 'public';
-};
+}
 export interface CreateEventDto {
     uid: string;
     name: string;

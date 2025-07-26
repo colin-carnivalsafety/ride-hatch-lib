@@ -61,7 +61,7 @@ export type RequiredDocuments = {
   file_workers_compensation: DocumentRequirementLevel
 }
 
-export type EventDocument = {
+export interface EventDocument {
   uid: string;
   name: string;
   description: string;
