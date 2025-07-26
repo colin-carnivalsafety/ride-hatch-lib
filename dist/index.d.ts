@@ -75,7 +75,7 @@ export interface EventDocument {
     updated_at_ms: number;
     deleted_at_ms: number | null;
     published_at_ms: number;
-    visibility: 'draft' | 'private' | 'public';
+    visibility: 'draft' | 'private' | 'published';
 }
 export interface CreateEventDto {
     uid: string;
@@ -91,7 +91,7 @@ export interface CreateEventDto {
     bump_out_at: string;
     images: string[];
     required_documents: RequiredDocuments;
-    visibility: 'draft' | 'private' | 'public';
+    visibility: 'draft' | 'private' | 'published';
 }
 export type UpdateEventDto = {
     name?: string;
@@ -106,7 +106,7 @@ export type UpdateEventDto = {
     bump_out_at?: string;
     images?: string[];
     required_documents?: RequiredDocuments;
-    visibility?: 'draft' | 'private' | 'public';
+    visibility?: 'draft' | 'private' | 'published';
 };
 export declare enum RegistrationStatus {
     idle = "idle",
