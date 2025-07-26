@@ -3,8 +3,8 @@
 # Push new version
 
 ```sh
-yarn build
 yarn version --patch
+yarn build
 git commit -am "New release"
 git push --follow-tags
 ```
