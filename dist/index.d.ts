@@ -249,3 +249,17 @@ export type BusinessUser = {
     updated_at: string;
     deleted_at: string | null;
 };
+export type CreateBusinessUserDto = {
+    email: string;
+    user_uid: string | null;
+    role: "manager" | "owner";
+    business_uid: string;
+    status: "invited" | "active";
+};
+export type UpdateBusinessUserDto = {
+    email?: string;
+    user_uid?: string | null;
+    role?: "manager" | "owner";
+    business_uid?: string;
+    status?: "invited" | "active";
+};

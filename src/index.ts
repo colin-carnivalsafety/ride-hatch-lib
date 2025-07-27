@@ -292,7 +292,7 @@ export type BusinessUser = {
   deleted_at: string | null
 }
 
-type CreateBusinessUserDto = {
+export type CreateBusinessUserDto = {
   email: string
   user_uid: string | null // Null when invited. Otherwise, the user uid tied to the email address
   role: "manager" | "owner"
@@ -300,7 +300,7 @@ type CreateBusinessUserDto = {
   status: "invited" | "active",
 };
 
-type UpdateBusinessUserDto = {
+export type UpdateBusinessUserDto = {
   email?: string
   user_uid?: string | null // Null when invited. Otherwise, the user uid tied to the email address
   role?: "manager" | "owner"
