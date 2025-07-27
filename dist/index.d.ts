@@ -238,3 +238,14 @@ export type EventRegistrationDocument = {
     file_gs_url: string | null;
     _additional_comments: string;
 };
+export type BusinessUser = {
+    uid: string;
+    email: string;
+    user_uid: string | null;
+    role: "manager" | "owner";
+    business_uid: string;
+    status: "invited" | "active";
+    updated_uid: string;
+    updated_at: string;
+    deleted_at: string | null;
+};

@@ -279,3 +279,31 @@ export type EventRegistrationDocument = {
   file_gs_url: string | null;
   _additional_comments: string
 }
+
+export type BusinessUser = {
+  uid: string
+  email: string
+  user_uid: string | null // Null when invited. Otherwise, the user uid tied to the email address
+  role: "manager" | "owner"
+  business_uid: string
+  status: "invited" | "active",
+  updated_uid: string
+  updated_at: string
+  deleted_at: string | null
+}
+
+type CreateBusinessUserDto = {
+  email: string
+  user_uid: string | null // Null when invited. Otherwise, the user uid tied to the email address
+  role: "manager" | "owner"
+  business_uid: string
+  status: "invited" | "active",
+};
+
+type UpdateBusinessUserDto = {
+  email?: string
+  user_uid?: string | null // Null when invited. Otherwise, the user uid tied to the email address
+  role?: "manager" | "owner"
+  business_uid?: string
+  status?: "invited" | "active",
+};
