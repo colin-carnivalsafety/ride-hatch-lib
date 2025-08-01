@@ -106,7 +106,7 @@ export interface CreateEventDto {
   bump_out_at: string;
   images: string[];
   required_documents: RequiredDocuments;
-  visibility: 'draft' | 'private' | 'published';
+  visibility: EventVisibility;
 }
 
 export type UpdateEventDto = {
@@ -122,7 +122,7 @@ export type UpdateEventDto = {
   bump_out_at?: string;
   images?: string[];
   required_documents?: RequiredDocuments;
-  visibility?: 'draft' | 'private' | 'published';
+  visibility?: EventVisibility;
 }
 
 export enum RegistrationStatus {
