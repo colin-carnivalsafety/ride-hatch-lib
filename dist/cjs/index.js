@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RegistrationStatus = exports.BusinessSubscription = exports.BusinessRole = void 0;
+exports.RegistrationStatus = exports.EventVisibility = exports.BusinessSubscription = exports.BusinessRole = void 0;
 var BusinessRole;
 (function (BusinessRole) {
     BusinessRole["RideOperator"] = "ride-operator";
@@ -13,6 +13,13 @@ var BusinessSubscription;
     BusinessSubscription["SubscriptionRideOperatorRaswa"] = "subscription-ro-raswa";
     BusinessSubscription["SubscriptionRideOperatorIntroductory"] = "subscription-ro-introductory";
 })(BusinessSubscription || (exports.BusinessSubscription = BusinessSubscription = {}));
+var EventVisibility;
+(function (EventVisibility) {
+    EventVisibility["Draft"] = "draft";
+    EventVisibility["Published"] = "published";
+    EventVisibility["Private"] = "private";
+    EventVisibility["Unlisted"] = "unlisted"; // Visible to anyone with the link, but not listed publicly
+})(EventVisibility || (exports.EventVisibility = EventVisibility = {}));
 var RegistrationStatus;
 (function (RegistrationStatus) {
     RegistrationStatus["idle"] = "idle";

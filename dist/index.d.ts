@@ -75,7 +75,13 @@ export interface EventDocument {
     updated_at_ms: number;
     deleted_at_ms: number | null;
     published_at_ms: number;
-    visibility: 'draft' | 'private' | 'published';
+    visibility: EventVisibility;
+}
+export declare enum EventVisibility {
+    Draft = "draft",// Not visible to anyone except the owner
+    Published = "published",// Visible to the public
+    Private = "private",// Visible to the owner and invited businesses only
+    Unlisted = "unlisted"
 }
 export interface CreateEventDto {
     uid: string;
