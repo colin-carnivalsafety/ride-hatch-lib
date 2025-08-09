@@ -24,3 +24,5 @@ export var RegistrationStatus;
     RegistrationStatus["rejected"] = "rejected";
     RegistrationStatus["standby"] = "standby";
 })(RegistrationStatus || (RegistrationStatus = {}));
+export class UpdateRideDto {
+}

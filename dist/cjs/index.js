@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RegistrationStatus = exports.EventVisibility = exports.BusinessSubscription = exports.BusinessRole = void 0;
+exports.UpdateRideDto = exports.RegistrationStatus = exports.EventVisibility = exports.BusinessSubscription = exports.BusinessRole = void 0;
 var BusinessRole;
 (function (BusinessRole) {
     BusinessRole["RideOperator"] = "ride-operator";
@@ -27,3 +27,6 @@ var RegistrationStatus;
     RegistrationStatus["rejected"] = "rejected";
     RegistrationStatus["standby"] = "standby";
 })(RegistrationStatus || (exports.RegistrationStatus = RegistrationStatus = {}));
+class UpdateRideDto {
+}
+exports.UpdateRideDto = UpdateRideDto;

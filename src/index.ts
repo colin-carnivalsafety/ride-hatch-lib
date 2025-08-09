@@ -173,76 +173,164 @@ export type UpdateDeviceRegistrationDto = {
   registration_status?: RegistrationStatus;
 }
 
-export type RideCommon = {
+export type RideDocument = {
   uid: string;
   name: string;
-  description: string
-  status: string // 'active' | 'inactive'
-  resource_type: string // 'ride' | 'novelty'
+  owner_business_uid: string;
+  owner_uid: string;
+  updated_by_uid: string; // DEPRECATED: 15/06/2025
+  created_at_ms: number; // NOTE: Added 15/06/2025
+  updated_at_ms: number;
+  deleted_at_ms: number | null;
+  description: string;
+  status: string;
+  resource_type: string;
+  _country_of_origin: string;
+  _year_of_manufacture: string;
+  _manufacturer_name: string;
+  _model: string;
+  _min_rider_age: string;
+  _min_rider_height_cm: string;
+  _max_rider_height_cm: string;
+  _min_max_height_requiring_adult_cm: string;
+  _other_restrictions: string;
+  _max_num_of_riders: string;
+  _max_loading_cycles_per_hour: string;
+  _site_dimensions_width_m: string;
+  _site_dimensions_depth_m: string;
+  _site_dimensions_height_m: string;
+  _device_dimension_frontage_m: string;
+  _device_dimension_depth_m: string;
+  _device_dimension_height_m: string;
+  _ride_envelope_overhand_required: string;
+  _classification: string;
+  _device_type: string;
+  _power_supply: string;
+  _products_range: string;
+  _total_site_dimensions: string;
+  _device_dimensions: string;
 
-  // TODO: Move all this to EAV. We'll keep the core fields here for now for simplicity
+  // Extracted Properties
+  _plant_rego_state_issued?: string;
+  _plant_rego_number?: string;
+  _plant_rego_expiry_date?: string;
+  _design_rego_number?: string;
+  _engineering_cert_inspected_date?: string;
+  _engineering_cert_engineer_name?: string;
+  _public_liability_policy_number?: string;
+  _public_liability_expiry_date?: string;
+  _public_liability_coverage_amount?: string;
 
-  // REMOVED
-  // _manufacturer_name: string
-  // _model: string
-  // _country_of_origin: string
-  // _year_of_manufacture: string
-  // _seats: string
-  // _theoretical_hrs_capacity: string
-  // _height_restrictions: string
-
-  // ADDED
-  _country_of_origin: string
-  _year_of_manufacture: string
-  _manufacturer_name: string
-  _model: string
-  _min_rider_age: string
-  _min_rider_height_cm: string
-  _max_rider_height_cm: string
-  _min_max_height_requiring_adult_cm: string
-  _other_restrictions: string
-  _max_num_of_riders: string
-  _max_loading_cycles_per_hour: string
-
-  _site_dimensions_width_m: string
-  _site_dimensions_depth_m: string
-  _site_dimensions_height_m: string
-
-  _device_dimension_frontage_m: string
-  _device_dimension_depth_m: string
-  _device_dimension_height_m: string
-
-  _ride_envelope_overhand_required: string
-  _classification: string
-  // _power_supply: string
-
-  // Novelty
-  _device_type: string,
-  _power_supply: string,
-  _products_range: string,
-  _total_site_dimensions: string,
-  _device_dimensions: string
-
-  // Hidden from user
-  _plant_rego_state_issued: string
-  _plant_rego_number: string
-  _plant_rego_expiry_date: string
-  _design_rego_number: string
-  _engineering_cert_inspected_date: string
-  _engineering_cert_engineer_name: string
-  _public_liability_policy_number: string
-  _public_liability_expiry_date: string
-  _public_liability_coverage_amount: string
+  // Computed when extracted properties are set.
+  _plant_rego_state_issued_updated_at?: string;
+  _plant_rego_number_updated_at?: string;
+  _design_rego_number_updated_at?: string;
+  _plant_rego_expiry_date_updated_at?: string;
+  _engineering_cert_inspected_date_updated_at?: string;
+  _engineering_cert_engineer_name_updated_at?: string;
+  _public_liability_policy_number_updated_at?: string;
+  _public_liability_expiry_date_updated_at?: string;
+  _public_liability_coverage_amount_updated_at?: string;
 }
 
-export interface RideDocument extends RideCommon {
-  uid: string
-  name: string
-  owner_business_uid: string
-  owner_uid: string
-  updated_by_uid: string
-  updated_at_ms: number
-  deleted_at_ms: number | null
+
+export type CreateRideDto = {
+  uid: string;
+  name: string;
+  owner_business_uid: string;
+  owner_uid: string;
+  description: string;
+  status: string;
+  resource_type: string;
+  _country_of_origin: string;
+  _year_of_manufacture: string;
+  _manufacturer_name: string;
+  _model: string;
+  _min_rider_age: string;
+  _min_rider_height_cm: string;
+  _max_rider_height_cm: string;
+  _min_max_height_requiring_adult_cm: string;
+  _other_restrictions: string;
+  _max_num_of_riders: string;
+  _max_loading_cycles_per_hour: string;
+  _site_dimensions_width_m: string;
+  _site_dimensions_depth_m: string;
+  _site_dimensions_height_m: string;
+  _device_dimension_frontage_m: string;
+  _device_dimension_depth_m: string;
+  _device_dimension_height_m: string;
+  _ride_envelope_overhand_required: string;
+  _classification: string;
+  _device_type: string;
+  _power_supply: string;
+  _products_range: string;
+  _total_site_dimensions: string;
+  _device_dimensions: string;
+  _plant_rego_state_issued: string;
+  _plant_rego_number: string;
+  _plant_rego_expiry_date: string;
+  _design_rego_number: string;
+  _engineering_cert_inspected_date: string;
+  _engineering_cert_engineer_name: string;
+  _public_liability_policy_number: string;
+  _public_liability_expiry_date: string;
+  _public_liability_coverage_amount: string;
+}
+
+export class UpdateRideDto {
+  uid?: string;
+  name?: string;
+  // owner_business_uid?: string; // Cannot be updated via /update
+  // owner_uid?: string; // Cannot be updated via /update
+  // updated_by_uid?: string; // Cannot be updated via /update
+  deleted_at_ms?: number | null;
+  description?: string;
+  status?: string;
+  resource_type?: string;
+  _country_of_origin?: string;
+  _year_of_manufacture?: string;
+  _manufacturer_name?: string;
+  _model?: string;
+  _min_rider_age?: string;
+  _min_rider_height_cm?: string;
+  _max_rider_height_cm?: string;
+  _min_max_height_requiring_adult_cm?: string;
+  _other_restrictions?: string;
+  _max_num_of_riders?: string;
+  _max_loading_cycles_per_hour?: string;
+  _site_dimensions_width_m?: string;
+  _site_dimensions_depth_m?: string;
+  _site_dimensions_height_m?: string;
+  _device_dimension_frontage_m?: string;
+  _device_dimension_depth_m?: string;
+  _device_dimension_height_m?: string;
+  _ride_envelope_overhand_required?: string;
+  _classification?: string;
+  _device_type?: string;
+  _power_supply?: string;
+  _products_range?: string;
+  _total_site_dimensions?: string;
+  _device_dimensions?: string;
+
+  _plant_rego_state_issued?: string;
+  _plant_rego_number?: string;
+  _plant_rego_expiry_date?: string;
+  _design_rego_number?: string;
+  _engineering_cert_inspected_date?: string;
+  _engineering_cert_engineer_name?: string;
+  _public_liability_policy_number?: string;
+  _public_liability_expiry_date?: string;
+  _public_liability_coverage_amount?: string;
+
+  _plant_rego_state_issued_updated_at?: string;
+  _plant_rego_number_updated_at?: string;
+  _design_rego_number_updated_at?: string;
+  _plant_rego_expiry_date_updated_at?: string;
+  _engineering_cert_inspected_date_updated_at?: string;
+  _engineering_cert_engineer_name_updated_at?: string;
+  _public_liability_policy_number_updated_at?: string;
+  _public_liability_expiry_date_updated_at?: string;
+  _public_liability_coverage_amount_updated_at?: string;
 }
 
 export type UserProfile = {
